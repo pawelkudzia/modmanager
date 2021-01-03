@@ -1,0 +1,19 @@
+{
+  "name": "modmanager",
+  "version": "1.0.0",
+  "description": "ModManager is simple REST Web API which allows users to manage their games and mods library.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawelkudzia/modmanager.git"
+  },
+  "author": "Pawel Kudzia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawelkudzia/modmanager/issues"
+  },
+  "homepage": "https://github.com/pawelkudzia/modmanager#readme"
+}
