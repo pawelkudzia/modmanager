@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+import AppError from './utils/appError.js';
 import testRouter from './routes/testRoutes.js';
 
 
@@ -35,9 +36,17 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/v1/test', testRouter);
 
 app.all('*', (req, res, next) => {
-    res.status(404).json({
-        status: 'fail',
-        message: `Can not find ${req.originalUrl} on this server!`
+    next(new AppError(`Can not find ${req.originalUrl} on this server!`, 404));
+});
+
+// global error handling middleware
+app.use((err, req, res, next) => {
+    err.statusCode = err.statusCode || 500;
+    err.status = err.status || 'error';
+
+    res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message
     });
 });
 
