@@ -13,3 +13,5 @@ db.users.update({ name: 'admin' }, { $set: { role: 'admin' } })
 db.users.find().pretty()
 
 db.games.find().pretty()
+
+db.mods.find().pretty()
