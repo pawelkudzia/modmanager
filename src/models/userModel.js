@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import bcrypt from 'bcryptjs';
 
+const options = {
+    timestamps: true
+};
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -20,7 +24,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Password is required.'],
         minlength: 8,
-        select: false
+        select: false // password will be not included in JSON result
     },
     passwordConfirm: {
         type: String,
@@ -38,8 +42,9 @@ const userSchema = new mongoose.Schema({
         enum: ['user', 'admin'],
         default: 'user'
     }
-});
+}, options);
 
+// document middleware
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         return next();
@@ -51,6 +56,7 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
+// methods
 userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);
 };
