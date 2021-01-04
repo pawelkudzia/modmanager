@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Test Game",
+        "description": "This is description for example game.",
+        "genre": "Misc",
+        "developer": "Test Developer",
+        "engine": "Test Engine",
+        "platforms": ["Windows", "Linux", "macOS", "Xbox Series X", "PS5"]
+    },
+    {
+        "name": "Game without Developer and Engine",
+        "description": "This is description for example game.",
+        "genre": "Action",
+        "platforms": ["Windows"]
+    },
+    {
+        "name": "Game without Platforms",
+        "description": "This is description for example game.",
+        "genre": "Role-playing",
+        "developer": "Test Developer",
+        "engine": "Test Engine"
+    }
+]

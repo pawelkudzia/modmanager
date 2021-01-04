@@ -2,6 +2,7 @@ import fs from 'fs';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import User from '../models/userModel.js';
+import Game from '../models/gameModel.js';
 
 dotenv.config({ path: './config.env' });
 const DB = process.env.DATABASE_LOCAL;
@@ -19,12 +20,18 @@ const users = JSON.parse(
     fs.readFileSync('./src/dev/users.json', 'utf-8')
 );
 
+const games = JSON.parse(
+    fs.readFileSync('./src/dev/games.json', 'utf-8')
+);
+
 const importData = async () => {
     try {
         await User.create(users);
         console.log('Users data was imported into database.');
+        await Game.create(games);
+        console.log('Games data was imported into database.');
     } catch (error) {
-        console.error('Something went wrong and users data could not be imported into database.');
+        console.error('Something went wrong and data could not be imported into database.');
         console.error(error);
     }
 
@@ -35,8 +42,10 @@ const deleteData = async () => {
     try {
         await User.deleteMany();
         console.log('Users data was deleted from database.');
+        await Game.deleteMany();
+        console.log('Games data was deleted from database.');
     } catch (error) {
-        console.error('Something went wrong and users data could not be deleted from database.');
+        console.error('Something went wrong and data could not be deleted from database.');
     }
 
     process.exit();

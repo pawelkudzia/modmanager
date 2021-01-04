@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 import AppError from './utils/appError.js';
 import testRouter from './routes/testRoutes.js';
 import userRouter from './routes/userRoutes.js';
+import gameRouter from './routes/gameRoutes.js';
 
 
 // app init
@@ -36,6 +37,7 @@ if (process.env.NODE_ENV === 'development') {
 // api
 app.use('/api/v1/test', testRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/games', gameRouter);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can not find ${req.originalUrl} on this server!`, 404));
