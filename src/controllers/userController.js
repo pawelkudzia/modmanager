@@ -19,8 +19,22 @@ const getAllUsers = catchAsync(async (req, res, next) => {
     });
 });
 
+const getUser = catchAsync(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+        return next(new AppError('No user found with this id!', 404));
+    }
+
+    res.status(200).json({
+        status: 'success',
+        data: { user }
+    });
+});
+
 const userController = {
-    getAllUsers
+    getAllUsers,
+    getUser
 };
 
 export default userController;
