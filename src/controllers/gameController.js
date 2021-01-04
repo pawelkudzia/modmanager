@@ -49,10 +49,37 @@ const getGame = catchAsync(async (req, res, next) => {
     });
 });
 
+const updateGame = catchAsync(async (req, res, next) => {
+    const game = await Game.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators: true
+    });
+
+    if (!game) {
+        return next(new AppError('No game found with this id!', 404));
+    }
+
+    res.status(200).json({
+        status: 'success',
+        data: { game }
+    });
+});
+
+const deleteGame = catchAsync(async (req, res, next) => {
+    await Game.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+        status: 'success',
+        data: null
+    });
+});
+
 const gameController = {
     getAllGames,
     createGame,
-    getGame
+    getGame,
+    updateGame,
+    deleteGame
 };
 
 export default gameController;

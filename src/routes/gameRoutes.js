@@ -10,6 +10,8 @@ router.route('/')
     .post(gameController.createGame);
 
 router.route('/:id')
-    .get(gameController.getGame);
+    .get(gameController.getGame)
+    .patch(gameController.updateGame)
+    .delete(gameController.deleteGame);
 
 export default router;
