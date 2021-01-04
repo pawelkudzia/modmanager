@@ -1,0 +1,23 @@
+[
+    {
+        "role": "admin",
+        "name": "admin",
+        "email": "admin@example.com",
+        "password": "123456789",
+        "passwordConfirm": "123456789"
+    },
+    {
+        "role": "user",
+        "name": "user",
+        "email": "user@example.com",
+        "password": "123456789",
+        "passwordConfirm": "123456789"
+    },
+    {
+        "role": "user",
+        "name": "tester",
+        "email": "tester@example.com",
+        "password": "123456789",
+        "passwordConfirm": "123456789"
+    }
+]
