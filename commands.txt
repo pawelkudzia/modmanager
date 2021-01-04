@@ -1,0 +1,15 @@
+--- Node.js ---
+
+node ./src/dev/data.js --import
+
+node ./src/dev/data.js --delete
+
+
+
+--- MongoDB ---
+
+db.users.update({ name: 'admin' }, { $set: { role: 'admin' } })
+
+db.users.find().pretty()
+
+db.games.find().pretty()
