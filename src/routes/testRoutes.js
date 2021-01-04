@@ -1,19 +1,13 @@
 import express from 'express';
+import catchAsync from '../utils/catchAsync.js';
 
 // endpoint handlers
-const apiTest = async (req, res) => {
-    try {
-        res.status(200).json({
-            status: 'success',
-            message: `API is working: ${req.originalUrl}.`
-        });
-    } catch (error) {
-        res.status(404).json({
-            status: 'fail',
-            message: 'Something went wrong.'
-        });
-    }
-};
+const apiTest = catchAsync(async (req, res) => {
+    res.status(200).json({
+        status: 'success',
+        message: `API is working: ${req.originalUrl}.`
+    });
+});
 
 // router
 const router = express.Router();
