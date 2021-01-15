@@ -1,0 +1,90 @@
+<main class="container">
+
+  <p>registerForm: {{ registerForm.value | json }}</p>
+
+  <h1>Register</h1>
+
+  <div *ngIf="submitted" class="alert alert-success" role="alert">
+    <p>Account was successfully created!</p>
+    <button type="button" class="btn btn-primary" (click)="newForm()">Register new Account</button>
+  </div>
+
+  <form *ngIf="!submitted" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="name.invalid && name.touched"
+        formControlName="name">
+
+        <div *ngIf="name.invalid && name.touched">
+          <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
+          <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+          <small *ngIf="name.errors.maxlength" class="text-danger">Name must have maximum 20 chars.</small>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [class.is-invalid]="email.invalid && email.touched"
+        formControlName="email">
+
+        <div *ngIf="email.invalid && email.touched">
+          <small *ngIf="email.errors.required" class="text-danger">Email is required.</small>
+          <small *ngIf="email.errors.email" class="text-danger">Email must be valid email.</small>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        [class.is-invalid]="password.invalid && password.touched"
+        formControlName="password">
+
+        <div *ngIf="password.invalid && password.touched">
+          <small *ngIf="password.errors.required" class="text-danger">Password is required.</small>
+          <small *ngIf="password.errors.minlength" class="text-danger">Password must have at least 8 chars.</small>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="passwordConfirm" class="form-label">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        [class.is-invalid]="registerForm.errors?.misMatch || (passwordConfirm.invalid && passwordConfirm.touched)"
+        formControlName="passwordConfirm">
+
+        <small *ngIf="registerForm.errors?.misMatch" class="text-danger">Passwords must be the same.</small>
+
+        <div *ngIf="passwordConfirm.invalid && passwordConfirm.touched">
+          <small *ngIf="passwordConfirm.errors.required" class="text-danger">Password is required.</small>
+          <small *ngIf="passwordConfirm.errors.minlength" class="text-danger">Password must have at least 8 chars.</small>
+        </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="registerForm.invalid">Register</button>
+
+    <button type="reset" class="btn btn-danger">Reset</button>
+
+  </form>
+
+</main>
