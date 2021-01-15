@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NavbarComponent } from './navbar/navbar.component';
 import { GamesComponent } from './games/games.component';
 import { ModsComponent } from './mods/mods.component';
+import { GameComponent } from './game/game.component';
+import { ModComponent } from './mod/mod.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ModsComponent } from './mods/mods.component';
     PageNotFoundComponent,
     NavbarComponent,
     GamesComponent,
-    ModsComponent
+    ModsComponent,
+    GameComponent,
+    ModComponent
   ],
   imports: [
     BrowserModule,
