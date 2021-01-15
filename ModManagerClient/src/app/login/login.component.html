@@ -1,1 +1,49 @@
-<p>login works!</p>
+<main class="container">
+
+  <p>loginForm: {{ loginForm.value | json }}</p>
+
+  <h1>Login</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [class.is-invalid]="email.invalid && email.touched"
+        formControlName="email">
+
+        <div *ngIf="email.invalid && email.touched">
+          <small *ngIf="email.errors.required" class="text-danger">Email is required.</small>
+          <small *ngIf="email.errors.email" class="text-danger">Email must be valid email.</small>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        [class.is-invalid]="password.invalid && password.touched"
+        formControlName="password">
+
+        <div *ngIf="password.invalid && password.touched">
+          <small *ngIf="password.errors.required" class="text-danger">Password is required.</small>
+        </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid">Login</button>
+
+    <button type="reset" class="btn btn-danger">Reset</button>
+
+  </form>
+
+</main>
