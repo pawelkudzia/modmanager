@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddGameComponent } from './add-game/add-game.component';
 import { GameComponent } from './game/game.component';
 import { GamesComponent } from './games/games.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'mods',
     component: ModsComponent
+  },
+  {
+    path: 'games/create',
+    component: AddGameComponent
   },
   {
     path: 'games/:id',

@@ -1,0 +1,121 @@
+<main class="container">
+
+  <p>addGameForm: {{ addGameForm.value | json }}</p>
+
+  <h1>Add Game</h1>
+
+  <div *ngIf="submitted" class="alert alert-success" role="alert">
+    <p>Game was successfully added!</p>
+    <button type="button" class="btn btn-primary" (click)="newForm()">Add new Game</button>
+  </div>
+
+  <form *ngIf="!submitted" [formGroup]="addGameForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="name.invalid && name.touched"
+        formControlName="name">
+
+      <div *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
+        <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        [class.is-invalid]="description.invalid && description.touched"
+        formControlName="description"></textarea>
+
+      <div *ngIf="description.invalid && description.touched">
+        <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
+        <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
+        <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="genre" class="form-label">Genre</label>
+      <select
+        class="form-select"
+        [class.is-invalid]="genre.invalid && genre.touched"
+        formControlName="genre">
+        <option *ngFor="let genre of genres" value="{{ genre }}">{{ genre }}</option>
+      </select>
+
+      <div *ngIf="genre.invalid && genre.touched">
+        <small *ngIf="genre.errors.required" class="text-danger">Genre is required.</small>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="developer" class="form-label">Developer</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="developer.invalid && developer.touched"
+        formControlName="developer">
+
+      <div *ngIf="developer.invalid && developer.touched">
+        <small *ngIf="developer.errors.required" class="text-danger">Developer is required.</small>
+        <small *ngIf="developer.errors.minlength" class="text-danger">Developer must have at least 3 chars.</small>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="engine" class="form-label">Engine</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="engine.invalid && engine.touched"
+        formControlName="engine">
+
+      <div *ngIf="engine.invalid && engine.touched">
+        <small *ngIf="engine.errors.required" class="text-danger">Engine is required.</small>
+        <small *ngIf="engine.errors.minlength" class="text-danger">Engine must have at least 3 chars.</small>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label for="platforms" class="form-label">Platforms</label>
+
+      <select
+        class="form-select"
+        [class.is-invalid]="platforms.invalid && platforms.touched"
+        formControlName="platforms"
+        multiple>
+        <option *ngFor="let platform of platformStrings" value="{{ platform }}">{{ platform }}</option>
+      </select>
+
+      <div *ngIf="platforms.invalid && platforms.touched">
+        <small *ngIf="platforms.errors.required" class="text-danger">Platforms is required.</small>
+      </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="addGameForm.invalid">Add</button>
+
+    <button type="button" class="btn btn-danger" (click)="newForm()">Reset</button>
+
+  </form>
+
+</main>

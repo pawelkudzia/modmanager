@@ -14,6 +14,7 @@ import { GamesComponent } from './games/games.component';
 import { ModsComponent } from './mods/mods.component';
 import { GameComponent } from './game/game.component';
 import { ModComponent } from './mod/mod.component';
+import { AddGameComponent } from './add-game/add-game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ModComponent } from './mod/mod.component';
     GamesComponent,
     ModsComponent,
     GameComponent,
-    ModComponent
+    ModComponent,
+    AddGameComponent
   ],
   imports: [
     BrowserModule,
