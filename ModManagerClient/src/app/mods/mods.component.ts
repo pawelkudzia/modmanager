@@ -49,7 +49,7 @@ export class ModsComponent implements OnInit {
 
   newForm() {
     this.submitted = false;
-    this.addModForm.reset();
+    this.addModForm.reset({ game: this.games[0] });
   }
 
 }
