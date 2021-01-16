@@ -39,11 +39,27 @@ and also run command:
 
 ```npm install```
 
-If there are not any errors you can run backend and frontend applications.
+If there are not any errors you can run backend and frontend applications. To run backend application (Express) go to root directory:
+
+```cd modmanager-master```
+
+and run command:
+
+```npm run dev```
+
+To run frontend application (Angular) go to client application directory:
+
+```cd ModManagerClient```
+
+and run command:
+
+```ng serve --open```
+
+As you can see they are standard Node.js and Angular commands. For more detailed information you can visit official websites of these tools.
 
 ## Usage
 
-There will be information about usage.
+ModManager can be used as simple games and mods web application aggregator which allows users to store and manage information about their favourites games and mods. Users can create new accounts, add basic information about games and mods for these games.
 
 ## Features
 
