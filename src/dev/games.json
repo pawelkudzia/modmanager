@@ -5,7 +5,7 @@
         "genre": "Misc",
         "developer": "Test Developer",
         "engine": "Test Engine",
-        "platforms": ["Windows", "Linux", "macOS", "Xbox Series X", "PS5"]
+        "platforms": ["Windows", "Linux", "macOS"]
     },
     {
         "name": "Game without Developer and Engine",
