@@ -71,7 +71,11 @@ There will be information about documentation.
 
 ## Credits
 
-There will be information about credits.
+[ModManager](https://github.com/pawelkudzia/modmanager) (this application) by Paweł Kudzia.
+
+[Express](https://expressjs.com/) by all its contributors.
+
+[Angular](https://angular.io/) by [Google](https://about.google/).
 
 ## License
 
