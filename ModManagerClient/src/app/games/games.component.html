@@ -28,10 +28,10 @@
         [class.is-invalid]="name.invalid && name.touched"
         formControlName="name">
 
-        <div *ngIf="name.invalid && name.touched">
-          <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
-          <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
-        </div>
+      <div *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
+        <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+      </div>
 
     </div>
 
@@ -43,11 +43,11 @@
         [class.is-invalid]="description.invalid && description.touched"
         formControlName="description"></textarea>
 
-        <div *ngIf="description.invalid && description.touched">
-          <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
-          <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
-          <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
-        </div>
+      <div *ngIf="description.invalid && description.touched">
+        <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
+        <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
+        <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
+      </div>
 
     </div>
 
@@ -76,10 +76,10 @@
         [class.is-invalid]="developer.invalid && developer.touched"
         formControlName="developer">
 
-        <div *ngIf="developer.invalid && developer.touched">
-          <small *ngIf="developer.errors.required" class="text-danger">Developer is required.</small>
-          <small *ngIf="developer.errors.minlength" class="text-danger">Developer must have at least 3 chars.</small>
-        </div>
+      <div *ngIf="developer.invalid && developer.touched">
+        <small *ngIf="developer.errors.required" class="text-danger">Developer is required.</small>
+        <small *ngIf="developer.errors.minlength" class="text-danger">Developer must have at least 3 chars.</small>
+      </div>
 
     </div>
 
@@ -92,26 +92,28 @@
         [class.is-invalid]="engine.invalid && engine.touched"
         formControlName="engine">
 
-        <div *ngIf="engine.invalid && engine.touched">
-          <small *ngIf="engine.errors.required" class="text-danger">Engine is required.</small>
-          <small *ngIf="engine.errors.minlength" class="text-danger">Engine must have at least 3 chars.</small>
-        </div>
+      <div *ngIf="engine.invalid && engine.touched">
+        <small *ngIf="engine.errors.required" class="text-danger">Engine is required.</small>
+        <small *ngIf="engine.errors.minlength" class="text-danger">Engine must have at least 3 chars.</small>
+      </div>
 
     </div>
 
     <div class="mb-3">
 
       <label for="platforms" class="form-label">Platforms</label>
-      <input
-        type="text"
-        class="form-control"
-        [class.is-invalid]="platforms.invalid && platforms.touched"
-        formControlName="platforms">
 
-        <div *ngIf="platforms.invalid && platforms.touched">
-          <small *ngIf="platforms.errors.required" class="text-danger">Platforms is required.</small>
-          <small *ngIf="platforms.errors.minlength" class="text-danger">Platforms must have at least 3 chars.</small>
-        </div>
+      <select
+        class="form-select"
+        [class.is-invalid]="platforms.invalid && platforms.touched"
+        formControlName="platforms"
+        multiple>
+        <option *ngFor="let platform of platformStrings" value="{{ platform }}">{{ platform }}</option>
+      </select>
+
+      <div *ngIf="platforms.invalid && platforms.touched">
+        <small *ngIf="platforms.errors.required" class="text-danger">Platforms is required.</small>
+      </div>
 
     </div>
 

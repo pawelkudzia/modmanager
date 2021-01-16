@@ -14,6 +14,10 @@ export class GamesComponent implements OnInit {
     'Action', 'Adventure', 'Role-playing', 'Shooter', 'Simulation', 'Sports', 'Strategy', 'Misc'
   ];
 
+  platformStrings: string[] = [
+    'Windows', 'Linux', 'macOS'
+  ];
+
   constructor(private _fb: FormBuilder) { }
 
   get name(): AbstractControl {
@@ -47,7 +51,7 @@ export class GamesComponent implements OnInit {
       genre: [this.genres[0], Validators.required],
       developer: ['', [Validators.required, Validators.minLength(3)]],
       engine: ['', [Validators.required, Validators.minLength(3)]],
-      platforms: ['', [Validators.required, Validators.minLength(3)]]
+      platforms: ['', Validators.required]
     });
   }
 
@@ -59,7 +63,7 @@ export class GamesComponent implements OnInit {
 
   newForm() {
     this.submitted = false;
-    this.addGameForm.reset();
+    this.addGameForm.reset({ genre: this.genres[0] });
   }
 
 }
