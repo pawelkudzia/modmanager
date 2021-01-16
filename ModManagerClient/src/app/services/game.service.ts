@@ -15,7 +15,7 @@ export class GameService {
     return this._http.get<Game[]>(this._url);
   }
 
-  getGame(id: number): Observable<Game> {
+  getGame(id: string): Observable<Game> {
     return this._http.get<Game>(`${this._url}/${id}`);
   }
 
@@ -24,10 +24,10 @@ export class GameService {
   }
 
   updateGame(game: Game): Observable<Game> {
-    return this._http.put<Game>(`${this._url}/${game._id}`, game);
+    return this._http.patch<Game>(`${this._url}/${game._id}`, game);
   }
 
-  deleteGame(id: number): Observable<Game> {
+  deleteGame(id: string): Observable<Game> {
     return this._http.delete<Game>(`${this._url}/${id}`);
   }
 

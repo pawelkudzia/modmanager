@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Game } from '../contracts/game';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-games',
@@ -18,7 +20,14 @@ export class GamesComponent implements OnInit {
     'Windows', 'Linux', 'macOS'
   ];
 
-  constructor(private _fb: FormBuilder) { }
+  response = null;
+  error = null;
+  games: Game[] = [];
+
+  constructor(
+    private _fb: FormBuilder,
+    private _gameService: GameService
+  ) { }
 
   get name(): AbstractControl {
     return this.addGameForm.get('name');
@@ -53,12 +62,36 @@ export class GamesComponent implements OnInit {
       engine: ['', [Validators.required, Validators.minLength(3)]],
       platforms: ['', Validators.required]
     });
+
+    this._gameService.getGames().subscribe(
+      response => {
+        this.response = response;
+        this.games = this.response.data.games;
+      },
+      error => this.error = error
+    );
   }
 
   onSubmit() {
     this.submitted = true;
     console.log('data was submitted!');
-    console.log(this.addGameForm);
+
+    const value = this.addGameForm.value;
+
+    const newGame: Game = {
+      _id: null,
+      name: value.name,
+      description: value.description,
+      genre: value.genre,
+      developer: value.developer,
+      engine: value.engine,
+      platforms: value.platforms
+    };
+
+    this._gameService.addGame(newGame).subscribe(
+      response => this.response = response,
+      error => this.error = error
+    );
   }
 
   newForm() {

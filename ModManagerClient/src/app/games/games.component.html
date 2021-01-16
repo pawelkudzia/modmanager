@@ -1,12 +1,25 @@
 <main class="container">
 
   <h1>Games</h1>
-  <p>There will be information about games.</p>
 
-  <h2>List</h2>
-  <ul>
-    <li>Game 1</li>
-  </ul>
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    <p>Status: {{ error.error.status }}!</p>
+    <p>Message: {{ error.error.message }}</p>
+  </div>
+
+  <div *ngIf="games.length > 0; then thenGames; else elseGames"></div>
+
+  <ng-template #thenGames>
+    <ol>
+      <li *ngFor="let game of games">
+        <a [routerLink]="['/games', game._id]">{{ game.name }}</a>
+      </li>
+    </ol>
+  </ng-template>
+
+  <ng-template #elseGames>
+    <p>There are not any games.</p>
+  </ng-template>
 
   <p>addGameForm: {{ addGameForm.value | json }}</p>
 

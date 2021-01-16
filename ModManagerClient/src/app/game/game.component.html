@@ -1,6 +1,26 @@
 <main class="container">
 
   <h1>Game</h1>
-  <p>There will be information about game with id: {{ gameId }}</p>
+
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    <p>Status: {{ error.error.status }}!</p>
+    <p>Message: {{ error.error.message }}</p>
+  </div>
+
+  <div *ngIf="game; then thenGame; else elseGame"></div>
+
+  <ng-template #thenGame>
+    <p>_id: {{ game._id }}</p>
+    <p>name: {{ game.name }}</p>
+    <p>description: {{ game.description }}</p>
+    <p>genre: {{ game.genre }}</p>
+    <p>developer: {{ game.developer ? game.developer : 'Unknown' }}</p>
+    <p>engine: {{ game.engine ? game.engine : 'Unknown' }}</p>
+    <p>platforms: {{ game.platforms ? game.platforms : 'Unknown' }}</p>
+  </ng-template>
+
+  <ng-template #elseGame>
+    <p>There is not information about this game.</p>
+  </ng-template>
 
 </main>
