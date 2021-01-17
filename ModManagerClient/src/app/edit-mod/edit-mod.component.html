@@ -1,0 +1,123 @@
+<main class="container">
+
+  <p>editModForm: {{ editModForm.value | json }}</p>
+
+  <h1>Edit Mod</h1>
+
+  <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
+    <p>Mod was successfully updated!</p>
+    <button type="button" class="btn btn-primary" (click)="newForm()">Close</button>
+  </div>
+
+  <div *ngIf="!submitted && error" class="alert alert-danger" role="alert">
+    <p>Status: {{ error.error.status }}!</p>
+    <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
+  </div>
+
+  <div *ngIf="mod; then thenMod; else elseMod"></div>
+
+  <ng-template #thenMod>
+
+    <form *ngIf="!submitted" [formGroup]="editModForm" (ngSubmit)="onSubmit()">
+
+      <div class="mb-3">
+
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="name.invalid && name.touched"
+          formControlName="name">
+
+        <div *ngIf="name.invalid && name.touched">
+          <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
+          <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          [class.is-invalid]="description.invalid && description.touched"
+          formControlName="description"></textarea>
+
+        <div *ngIf="description.invalid && description.touched">
+          <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
+          <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
+          <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="game" class="form-label">Game</label>
+        <select
+          class="form-select"
+          [class.is-invalid]="game.invalid && game.touched"
+          formControlName="game">
+          <option *ngFor="let game of games" value="{{ game }}">{{ game }}</option>
+        </select>
+
+        <div *ngIf="game.invalid && game.touched">
+          <small *ngIf="game.errors.required" class="text-danger">Game is required.</small>
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label for="author" class="form-label">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="author.invalid && author.touched"
+          formControlName="author">
+
+        <div *ngIf="author.invalid && author.touched">
+          <small *ngIf="author.errors.required" class="text-danger">Author is required.</small>
+          <small *ngIf="author.errors.minlength" class="text-danger">Author must have at least 3 chars.</small>
+          <small *ngIf="author.errors.maxlength" class="text-danger">Author must have maximum 100 chars.</small>
+        </div>
+
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="editModForm.invalid">Edit</button>
+
+      <button type="button" class="btn btn-secondary" (click)="newForm()">Reset</button>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Mod</h5>
+            <button type="button" id="exampleModalCloseBtn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete: {{ mod?.name }}?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="deleteMod()">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+
+  <ng-template #elseMod>
+    <p>There is not information about this mod.</p>
+  </ng-template>
+
+</main>

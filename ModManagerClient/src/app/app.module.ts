@@ -16,6 +16,8 @@ import { GameComponent } from './game/game.component';
 import { ModComponent } from './mod/mod.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { AddModComponent } from './add-mod/add-mod.component';
+import { EditModComponent } from './edit-mod/edit-mod.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { EditGameComponent } from './edit-game/edit-game.component';
     GameComponent,
     ModComponent,
     AddGameComponent,
-    EditGameComponent
+    EditGameComponent,
+    AddModComponent,
+    EditModComponent
   ],
   imports: [
     BrowserModule,

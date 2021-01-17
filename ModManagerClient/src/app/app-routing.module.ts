@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddGameComponent } from './add-game/add-game.component';
+import { AddModComponent } from './add-mod/add-mod.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { EditModComponent } from './edit-mod/edit-mod.component';
 import { GameComponent } from './game/game.component';
 import { GamesComponent } from './games/games.component';
 import { HomeComponent } from './home/home.component';
@@ -43,6 +45,14 @@ const routes: Routes = [
   {
     path: 'games/:id',
     component: GameComponent
+  },
+  {
+    path: 'mods/create',
+    component: AddModComponent
+  },
+  {
+    path: 'mods/:id/edit',
+    component: EditModComponent
   },
   {
     path: 'mods/:id',
