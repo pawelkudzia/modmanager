@@ -71,6 +71,7 @@
       <div *ngIf="developer.invalid && developer.touched">
         <small *ngIf="developer.errors.required" class="text-danger">Developer is required.</small>
         <small *ngIf="developer.errors.minlength" class="text-danger">Developer must have at least 3 chars.</small>
+        <small *ngIf="developer.errors.maxlength" class="text-danger">Developer must have maximum 100 chars.</small>
       </div>
 
     </div>
@@ -87,6 +88,7 @@
       <div *ngIf="engine.invalid && engine.touched">
         <small *ngIf="engine.errors.required" class="text-danger">Engine is required.</small>
         <small *ngIf="engine.errors.minlength" class="text-danger">Engine must have at least 3 chars.</small>
+        <small *ngIf="engine.errors.maxlength" class="text-danger">Engine must have maximum 100 chars.</small>
       </div>
 
     </div>

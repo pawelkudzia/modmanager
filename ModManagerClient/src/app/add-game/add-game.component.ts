@@ -58,8 +58,8 @@ export class AddGameComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
       genre: [this.genres[0], Validators.required],
-      developer: ['', [Validators.required, Validators.minLength(3)]],
-      engine: ['', [Validators.required, Validators.minLength(3)]],
+      developer: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+      engine: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       platforms: ['', Validators.required]
     });
 
