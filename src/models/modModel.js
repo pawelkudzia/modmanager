@@ -20,6 +20,7 @@ const modSchema = new mongoose.Schema({
     author: {
         type: String,
         minlength: 3,
+        maxlength: 100,
         default: undefined
     },
     game: {
