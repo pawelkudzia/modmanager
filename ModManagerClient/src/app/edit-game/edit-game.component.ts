@@ -28,6 +28,7 @@ export class EditGameComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private _fb: FormBuilder,
     private _gameService: GameService
   ) { }
@@ -116,6 +117,23 @@ export class EditGameComponent implements OnInit {
         this.response = response;
         this.game = this.response.data.game;
         this.editGameForm.reset(this.game);
+      },
+      error => this.error = error
+    );
+  }
+
+  deleteGame() {
+    this._gameService.deleteGame(this.gameId).subscribe(
+      response => {
+        let modalCloseButton = document.getElementById('exampleModalCloseBtn');
+        let event = new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        });
+        modalCloseButton.dispatchEvent(event);
+
+        this._router.navigate(['/games']);
       },
       error => this.error = error
     );
