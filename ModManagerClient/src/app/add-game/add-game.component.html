@@ -4,9 +4,14 @@
 
   <h1>Add Game</h1>
 
-  <div *ngIf="submitted" class="alert alert-success" role="alert">
+  <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Game was successfully added!</p>
     <button type="button" class="btn btn-primary" (click)="newForm()">Add new Game</button>
+  </div>
+
+  <div *ngIf="!submitted && error" class="alert alert-danger" role="alert">
+    <p>Status: {{ error.error.status }}!</p>
+    <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
   </div>
 
   <form *ngIf="!submitted" [formGroup]="addGameForm" (ngSubmit)="onSubmit()">

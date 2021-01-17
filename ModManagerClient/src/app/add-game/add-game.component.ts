@@ -22,7 +22,6 @@ export class AddGameComponent implements OnInit {
 
   response = null;
   error = null;
-  games: Game[] = [];
 
   constructor(
     private _fb: FormBuilder,
@@ -62,17 +61,10 @@ export class AddGameComponent implements OnInit {
       engine: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       platforms: ['', Validators.required]
     });
-
-    this._gameService.getGames().subscribe(
-      response => {
-        this.response = response;
-        this.games = this.response.data.games;
-      },
-      error => this.error = error
-    );
   }
 
   onSubmit() {
+    this.error = null;
     this.submitted = true;
     console.log('data was submitted!');
 
@@ -90,7 +82,10 @@ export class AddGameComponent implements OnInit {
 
     this._gameService.addGame(newGame).subscribe(
       response => this.response = response,
-      error => this.error = error
+      error => {
+        this.error = error;
+        this.newForm();
+      }
     );
   }
 

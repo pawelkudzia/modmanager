@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private _gameService: GameService
   ) { }
 
@@ -27,7 +28,10 @@ export class GameComponent implements OnInit {
         this.response = response;
         this.game = this.response.data.game;
       },
-      error => this.error = error
+      error => {
+        this.error = error;
+        this._router.navigate(['/404']);
+      }
     );
   }
 

@@ -83,11 +83,15 @@ export class EditGameComponent implements OnInit {
           platforms: this.game.platforms
         });
       },
-      error => this.error = error
+      error => {
+        this.error = error;
+        this._router.navigate(['/404']);
+      }
     );
   }
 
   onSubmit() {
+    this.error = null;
     this.submitted = true;
     console.log('data was submitted!');
 
@@ -105,7 +109,10 @@ export class EditGameComponent implements OnInit {
 
     this._gameService.updateGame(newGame).subscribe(
       response => this.response = response,
-      error => this.error = error
+      error => {
+        this.error = error;
+        this.newForm();
+      }
     );
   }
 
