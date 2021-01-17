@@ -1,7 +1,7 @@
-import AppError from '../../../javascript/dev/rest/05_jwt/api-tutorial/src/utils/appError.js';
 import Mod from '../models/modModel.js';
 import APIFeatures from '../utils/apiFeatures.js';
 import catchAsync from '../utils/catchAsync.js';
+import AppError from '../utils/appError.js';
 
 // endpoint handlers
 const getAllMods = catchAsync(async (req, res, next) => {

@@ -39,6 +39,17 @@ and also run command:
 
 ```npm install```
 
+Next step is creating config.env file where you can store environmental variables. To run backend application you have to prepare database connection string, port and also Json Web Token's stuff. You can use something like this:
+
+```
+NODE_ENV=development
+PORT=8080
+DATABASE_LOCAL=mongodb://localhost:27017/modmanager
+JWT_SECRET=<YOUR SECRET KEY>
+JWT_EXPIRES_IN=1d
+JWT_COOKIE_EXPIRES_IN=1
+```
+
 If there are not any errors you can run backend and frontend applications. To run backend application (Express) go to root directory:
 
 ```cd modmanager-master```
