@@ -10,6 +10,7 @@
   <div *ngIf="game; then thenGame; else elseGame"></div>
 
   <ng-template #thenGame>
+    <p><a [routerLink]="['/games/', game._id, 'edit']">Edit</a></p>
     <p>_id: {{ game._id }}</p>
     <p>name: {{ game.name }}</p>
     <p>description: {{ game.description }}</p>
