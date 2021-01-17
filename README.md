@@ -25,7 +25,7 @@ Make sure you follow official instructions for installing mentioned tools.
 
 After that you can clone or download [ModManager](https://github.com/pawelkudzia/modmanager) repository (master branch), then go to root directory:
 
-```cd modmanager-master```
+```cd modmanager```
 
 and run command:
 
@@ -52,7 +52,7 @@ JWT_COOKIE_EXPIRES_IN=1
 
 If there are not any errors you can run backend and frontend applications. To run backend application (Express) go to root directory:
 
-```cd modmanager-master```
+```cd modmanager```
 
 and run command:
 
