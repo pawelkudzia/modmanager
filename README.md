@@ -79,4 +79,4 @@ There will be information about documentation.
 
 ## License
 
-There will be information about license.
+The ModManager is open-sourced software licensed under the MIT license.
