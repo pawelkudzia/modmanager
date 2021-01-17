@@ -26,16 +26,17 @@ const gameSchema = new mongoose.Schema({
     developer: {
         type: String,
         minlength: 3,
+        maxlength: 100,
         default: undefined
     },
     engine: {
         type: String,
         minlength: 3,
+        maxlength: 100,
         default: undefined
     },
     platforms: {
         type: [String],
-        minlength: 3,
         default: undefined
     }
 }, options);
