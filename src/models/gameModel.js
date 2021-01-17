@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Mod from './modModel.js';
 
 const options = {
     timestamps: true
@@ -40,6 +41,14 @@ const gameSchema = new mongoose.Schema({
         default: undefined
     }
 }, options);
+
+// document middleware
+gameSchema.pre('findOneAndDelete', async function (next) {
+    const currentDocument = await this.model.findOne(this.getQuery());
+    await Mod.deleteMany( { game: currentDocument._id } );
+
+    next();
+});
 
 const Game = mongoose.model('Game', gameSchema);
 
