@@ -39,7 +39,7 @@ and also run command:
 
 ```npm install```
 
-Next step is creating config.env file where you can store environmental variables. To run backend application you have to prepare database connection string, port and also Json Web Token's stuff. You can use something like this:
+Next step is creating config.env file where you can store environment variables. To run backend application you have to prepare database connection string, port and also Json Web Token's stuff. You can use something like this:
 
 ```
 NODE_ENV=development
