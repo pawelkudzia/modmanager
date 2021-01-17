@@ -79,4 +79,4 @@ There will be information about documentation.
 
 ## License
 
-The ModManager is open-sourced software licensed under the MIT license.
+The ModManager is open-sourced software licensed under the [MIT](https://github.com/pawelkudzia/modmanager/blob/master/LICENSE) license.
