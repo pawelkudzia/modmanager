@@ -52,7 +52,7 @@ export class AddModComponent implements OnInit {
       response => {
         this.response = response;
         this.games = this.response.data.games;
-        this.addModForm.get('game').setValue(this.games[0]._id);
+        this.addModForm.get('game').setValue(this.games[0]?._id);
       },
       error => this.error = error
     );

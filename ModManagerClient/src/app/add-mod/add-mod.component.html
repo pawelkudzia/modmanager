@@ -15,84 +15,94 @@
     <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
   </div>
 
-  <p>addModForm: {{ addModForm.value | json }}</p>
+  <div *ngIf="games.length > 0; then thenModForm; else elseModForm;"></div>
 
-  <form *ngIf="!submitted" [formGroup]="addModForm" (ngSubmit)="onSubmit()">
+  <ng-template #thenModForm>
 
-    <h2>Add</h2>
+    <p>addModForm: {{ addModForm.value | json }}</p>
 
-    <div class="mb-3">
+    <form *ngIf="!submitted" [formGroup]="addModForm" (ngSubmit)="onSubmit()">
 
-      <label for="name" class="form-label">Name</label>
-      <input
-        type="text"
-        class="form-control"
-        [class.is-invalid]="name.invalid && name.touched"
-        formControlName="name">
+      <h2>Add</h2>
 
-      <div *ngIf="name.invalid && name.touched">
-        <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
-        <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+      <div class="mb-3">
+
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="name.invalid && name.touched"
+          formControlName="name">
+
+        <div *ngIf="name.invalid && name.touched">
+          <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
+          <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+        </div>
+
       </div>
 
-    </div>
+      <div class="mb-3">
 
-    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          [class.is-invalid]="description.invalid && description.touched"
+          formControlName="description"></textarea>
 
-      <label for="description" class="form-label">Description</label>
-      <textarea
-        class="form-control"
-        [class.is-invalid]="description.invalid && description.touched"
-        formControlName="description"></textarea>
+        <div *ngIf="description.invalid && description.touched">
+          <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
+          <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
+          <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
+        </div>
 
-      <div *ngIf="description.invalid && description.touched">
-        <small *ngIf="description.errors.required" class="text-danger">Description is required.</small>
-        <small *ngIf="description.errors.minlength" class="text-danger">Description must have at least 3 chars.</small>
-        <small *ngIf="description.errors.maxlength" class="text-danger">Description must have maximum 1000 chars.</small>
       </div>
 
-    </div>
+      <div class="mb-3">
 
-    <div class="mb-3">
+        <label for="game" class="form-label">Game</label>
+        <select
+          class="form-select"
+          [class.is-invalid]="game.invalid && game.touched"
+          formControlName="game">
+          <option *ngFor="let game of games" value="{{ game?._id }}">{{ game?.name }}</option>
+        </select>
 
-      <label for="game" class="form-label">Game</label>
-      <select
-        class="form-select"
-        [class.is-invalid]="game.invalid && game.touched"
-        formControlName="game">
-        <option *ngFor="let game of games" value="{{ game?._id }}">{{ game?.name }}</option>
-      </select>
+        <div *ngIf="game.invalid && game.touched">
+          <small *ngIf="game.errors.required" class="text-danger">Game is required.</small>
+        </div>
 
-      <div *ngIf="game.invalid && game.touched">
-        <small *ngIf="game.errors.required" class="text-danger">Game is required.</small>
       </div>
 
-    </div>
+      <div class="mb-3">
 
-    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="author.invalid && author.touched"
+          formControlName="author">
 
-      <label for="author" class="form-label">Author</label>
-      <input
-        type="text"
-        class="form-control"
-        [class.is-invalid]="author.invalid && author.touched"
-        formControlName="author">
+        <div *ngIf="author.invalid && author.touched">
+          <small *ngIf="author.errors.required" class="text-danger">Author is required.</small>
+          <small *ngIf="author.errors.minlength" class="text-danger">Author must have at least 3 chars.</small>
+          <small *ngIf="author.errors.maxlength" class="text-danger">Author must have maximum 100 chars.</small>
+        </div>
 
-      <div *ngIf="author.invalid && author.touched">
-        <small *ngIf="author.errors.required" class="text-danger">Author is required.</small>
-        <small *ngIf="author.errors.minlength" class="text-danger">Author must have at least 3 chars.</small>
-        <small *ngIf="author.errors.maxlength" class="text-danger">Author must have maximum 100 chars.</small>
       </div>
 
-    </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="addModForm.invalid">Add</button>
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="addModForm.invalid">Add</button>
+      <button type="button" class="btn btn-secondary" (click)="newForm()">Reset</button>
 
-    <button type="button" class="btn btn-secondary" (click)="newForm()">Reset</button>
+    </form>
 
-  </form>
+  </ng-template>
+
+  <ng-template #elseModForm>
+    <p>There are not any games, so mods can not be added. Add new game and then you can add mod as well.</p>
+  </ng-template>
 
 </main>
