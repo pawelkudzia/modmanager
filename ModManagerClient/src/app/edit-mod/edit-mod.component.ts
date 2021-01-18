@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Mod } from '../contracts/mod';
 import { ModService } from '../services/mod.service';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-edit-mod',
@@ -13,9 +14,7 @@ export class EditModComponent implements OnInit {
   submitted: boolean = false;
   editModForm: FormGroup;
 
-  games: string[] = [
-    'game1', 'game2'
-  ];
+  games = [];
 
   modId: string;
   response = null;
@@ -26,7 +25,8 @@ export class EditModComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private _fb: FormBuilder,
-    private _modService: ModService
+    private _modService: ModService,
+    private _gameService: GameService
   ) { }
 
   get name(): AbstractControl {
@@ -52,6 +52,14 @@ export class EditModComponent implements OnInit {
       game: [this.games[0], Validators.required],
       author: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
     });
+
+    this._gameService.getGames().subscribe(
+      response => {
+        this.response = response;
+        this.games = this.response.data.games;
+      },
+      error => this.error = error
+    );
 
     this._route.params.subscribe(params => this.modId = params['id']);
 
