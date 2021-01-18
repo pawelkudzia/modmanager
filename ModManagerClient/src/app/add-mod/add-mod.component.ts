@@ -84,7 +84,7 @@ export class AddModComponent implements OnInit {
 
   newForm() {
     this.submitted = false;
-    this.addModForm.reset({ game: this.games[0]?.name });
+    this.addModForm.reset({ game: this.games[0]?._id });
   }
 
 }
