@@ -10,11 +10,17 @@
   <div *ngIf="games.length > 0; then thenGames; else elseGames"></div>
 
   <ng-template #thenGames>
-    <ol>
-      <li *ngFor="let game of games">
-        <a [routerLink]="['/games', game._id]">{{ game.name }}</a>
-      </li>
-    </ol>
+
+    <div *ngFor="let game of games" class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">{{ game.name }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Category: {{ game.genre }}</h6>
+        <p class="card-text">{{ game.description }}</p>
+        <a [routerLink]="['/games', game._id]" class="card-link">Show</a>
+        <a [routerLink]="['/games', game._id, 'edit']" class="card-link">Edit</a>
+      </div>
+    </div>
+
   </ng-template>
 
   <ng-template #elseGames>
