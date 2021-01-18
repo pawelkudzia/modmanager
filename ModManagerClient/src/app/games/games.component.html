@@ -1,6 +1,9 @@
 <main class="container">
 
-  <h1>Games</h1>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Games</h1>
+    <p class="lead">This view shows information about the games.</p>
+  </div>
 
   <div *ngIf="error" class="alert alert-danger" role="alert">
     <p>Status: {{ error.error.status }}!</p>
