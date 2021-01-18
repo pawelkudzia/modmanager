@@ -5,8 +5,6 @@
     <p class="lead">This view allows to edit information about the game.</p>
   </div>
 
-  <p>editGameForm: {{ editGameForm.value | json }}</p>
-
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Game was successfully updated!</p>
     <button type="button" class="btn btn-primary" (click)="newForm()">Close</button>
@@ -20,6 +18,22 @@
   <div *ngIf="game; then thenGame; else elseGame"></div>
 
   <ng-template #thenGame>
+
+    <ul class="nav shadow-sm p-3 mb-5 bg-white">
+      <li class="nav-item">
+        <a [routerLink]="['/games/', game._id]" class="nav-link active">Show</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/games/', game._id, 'edit']" class="nav-link">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/games']" class="nav-link">Back to Games</a>
+      </li>
+    </ul>
+
+    <h2>Edit</h2>
+
+    <p>editGameForm: {{ editGameForm.value | json }}</p>
 
     <form *ngIf="!submitted" [formGroup]="editGameForm" (ngSubmit)="onSubmit()">
 

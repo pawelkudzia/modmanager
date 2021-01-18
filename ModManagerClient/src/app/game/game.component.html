@@ -14,9 +14,9 @@
 
   <ng-template #thenGame>
 
-    <ul class="nav">
+    <ul class="nav shadow-sm p-3 mb-5 bg-white">
       <li class="nav-item">
-        <a [routerLink]="['/games/', game._id]" class="nav-link">Show</a>
+        <a [routerLink]="['/games/', game._id]" class="nav-link active">Show</a>
       </li>
       <li class="nav-item">
         <a [routerLink]="['/games/', game._id, 'edit']" class="nav-link">Edit</a>
