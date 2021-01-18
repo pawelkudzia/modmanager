@@ -12,6 +12,9 @@ export class GamesComponent implements OnInit {
   error = null;
   games: Game[] = [];
 
+  page = 1;
+  pageSize = 5;
+
   constructor(private _gameService: GameService) { }
 
   ngOnInit(): void {

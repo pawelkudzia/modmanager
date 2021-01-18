@@ -12,6 +12,9 @@ export class ModsComponent implements OnInit {
   error = null;
   mods: Mod[] = [];
 
+  page = 1;
+  pageSize = 5;
+
   constructor(private _modService: ModService) { }
 
   ngOnInit(): void {
