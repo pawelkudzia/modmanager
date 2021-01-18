@@ -5,8 +5,6 @@
     <p class="lead">This view allows to edit information about the mod.</p>
   </div>
 
-  <p>editModForm: {{ editModForm.value | json }}</p>
-
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Mod was successfully updated!</p>
     <button type="button" class="btn btn-primary" (click)="newForm()">Close</button>
@@ -21,7 +19,23 @@
 
   <ng-template #thenMod>
 
+    <ul class="nav shadow-sm p-3 mb-5 bg-white">
+      <li class="nav-item">
+        <a [routerLink]="['/mods/', mod._id]" class="nav-link active">Show</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/mods/', mod._id, 'edit']" class="nav-link">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/mods']" class="nav-link">Back to Mods</a>
+      </li>
+    </ul>
+
+    <p>editModForm: {{ editModForm.value | json }}</p>
+
     <form *ngIf="!submitted" [formGroup]="editModForm" (ngSubmit)="onSubmit()">
+
+      <h2>Edit</h2>
 
       <div class="mb-3">
 
@@ -62,7 +76,7 @@
           class="form-select"
           [class.is-invalid]="game.invalid && game.touched"
           formControlName="game">
-          <option *ngFor="let game of games" value="{{ game._id }}">{{ game.name }}</option>
+          <option *ngFor="let game of games" value="{{ game.name }}">{{ game.name }}</option>
         </select>
 
         <div *ngIf="game.invalid && game.touched">

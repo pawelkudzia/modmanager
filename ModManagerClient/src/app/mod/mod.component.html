@@ -1,6 +1,9 @@
 <main class="container">
 
-  <h1>Mod</h1>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Show: {{ mod?.name }}</h1>
+    <p class="lead">This view shows information about the mod.</p>
+  </div>
 
   <div *ngIf="error" class="alert alert-danger" role="alert">
     <p>Status: {{ error.error.status }}!</p>
@@ -10,12 +13,52 @@
   <div *ngIf="mod; then thenMod; else elseMod"></div>
 
   <ng-template #thenMod>
-    <p><a [routerLink]="['/mods/', mod._id, 'edit']">Edit</a></p>
-    <p>_id: {{ mod._id }}</p>
-    <p>name: {{ mod.name }}</p>
-    <p>description: {{ mod.description }}</p>
-    <p>game: {{ mod.game }}</p>
-    <p>author: {{ mod.author ? mod.author : 'Unknown' }}</p>
+
+    <ul class="nav shadow-sm p-3 mb-5 bg-white">
+      <li class="nav-item">
+        <a [routerLink]="['/mods/', mod._id]" class="nav-link active">Show</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/mods/', mod._id, 'edit']" class="nav-link">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/mods']" class="nav-link">Back to Mods</a>
+      </li>
+    </ul>
+
+    <h2>Details</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Key</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge bg-secondary">ID</span></td>
+          <td>{{ mod._id }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Name</span></td>
+          <td>{{ mod.name }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Description</span></td>
+          <td>{{ mod.description }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Game</span></td>
+          <td>{{ mod.game }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Author</span></td>
+          <td>{{ mod.author }}</td>
+        </tr>
+      </tbody>
+    </table>
+
   </ng-template>
 
   <ng-template #elseMod>

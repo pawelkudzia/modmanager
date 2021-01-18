@@ -5,8 +5,6 @@
     <p class="lead">This view allows to add new game.</p>
   </div>
 
-  <p>addGameForm: {{ addGameForm.value | json }}</p>
-
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Game was successfully added!</p>
     <button type="button" class="btn btn-primary" (click)="newForm()">Add new Game</button>
@@ -17,7 +15,11 @@
     <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
   </div>
 
+  <p>addGameForm: {{ addGameForm.value | json }}</p>
+
   <form *ngIf="!submitted" [formGroup]="addGameForm" (ngSubmit)="onSubmit()">
+
+    <h2>Add</h2>
 
     <div class="mb-3">
 

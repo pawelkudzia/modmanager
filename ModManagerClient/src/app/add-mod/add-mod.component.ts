@@ -44,7 +44,7 @@ export class AddModComponent implements OnInit {
     this.addModForm = this._fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
-      game: [this.games[0], Validators.required],
+      game: [this.games[0]?._id, Validators.required],
       author: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
     });
 
@@ -52,6 +52,7 @@ export class AddModComponent implements OnInit {
       response => {
         this.response = response;
         this.games = this.response.data.games;
+        this.addModForm.get('game').setValue(this.games[0]._id);
       },
       error => this.error = error
     );
@@ -83,7 +84,7 @@ export class AddModComponent implements OnInit {
 
   newForm() {
     this.submitted = false;
-    this.addModForm.reset({ games: this.games[0] });
+    this.addModForm.reset({ game: this.games[0]?.name });
   }
 
 }
