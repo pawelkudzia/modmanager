@@ -18,7 +18,7 @@
       <div class="card-body">
         <h4 class="card-title">{{ game.name }}</h4>
         <h6 class="card-subtitle mb-2 text-muted">Category: {{ game.genre }}</h6>
-        <p class="card-text">{{ game.description }}</p>
+        <p class="card-text">{{ game.description | slice:0:300 }}...</p>
         <a [routerLink]="['/games', game._id]" class="card-link">Show</a>
         <a [routerLink]="['/games', game._id, 'edit']" class="card-link">Edit</a>
       </div>

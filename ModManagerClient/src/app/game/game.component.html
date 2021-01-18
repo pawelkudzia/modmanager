@@ -14,16 +14,6 @@
 
   <ng-template #thenGame>
 
-    <p>_id: {{ game._id }}</p>
-    <p>name: {{ game.name }}</p>
-    <p>description: {{ game.description }}</p>
-    <p>genre: {{ game.genre }}</p>
-    <p>developer: {{ game.developer ? game.developer : 'Unknown' }}</p>
-    <p>engine: {{ game.engine ? game.engine : 'Unknown' }}</p>
-    <p>platforms: {{ game.platforms ? game.platforms : 'Unknown' }}</p>
-
-
-    <p>Navigation:</p>
     <ul class="nav">
       <li class="nav-item">
         <a [routerLink]="['/games/', game._id]" class="nav-link">Show</a>
@@ -35,6 +25,47 @@
         <a [routerLink]="['/games']" class="nav-link">Back to Games</a>
       </li>
     </ul>
+
+    <h2>Details</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Key</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge bg-secondary">ID</span></td>
+          <td>{{ game._id }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Name</span></td>
+          <td>{{ game.name }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Description</span></td>
+          <td>{{ game.description }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Genre</span></td>
+          <td>{{ game.genre }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Developer</span></td>
+          <td>{{ game.developer }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Engine</span></td>
+          <td>{{ game.engine }}</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg-secondary">Platforms</span></td>
+          <td>{{ game.platforms }}</td>
+        </tr>
+      </tbody>
+    </table>
 
   </ng-template>
 
