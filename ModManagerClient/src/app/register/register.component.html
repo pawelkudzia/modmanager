@@ -1,8 +1,11 @@
 <main class="container">
 
-  <p>registerForm: {{ registerForm.value | json }}</p>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Register</h1>
+    <p class="lead">This view allows to register new user account.</p>
+  </div>
 
-  <h1>Register</h1>
+  <p>registerForm: {{ registerForm.value | json }}</p>
 
   <div *ngIf="submitted" class="alert alert-success" role="alert">
     <p>Account was successfully created!</p>
@@ -83,7 +86,7 @@
       class="btn btn-primary"
       [disabled]="registerForm.invalid">Register</button>
 
-    <button type="reset" class="btn btn-danger">Reset</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
 
   </form>
 

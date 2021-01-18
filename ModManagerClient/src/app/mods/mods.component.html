@@ -1,6 +1,9 @@
 <main class="container">
 
-  <h1>Mods</h1>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Mods</h1>
+    <p class="lead">This view shows information about the mods. Currently there are {{ mods.length }} mods.</p>
+  </div>
 
   <div *ngIf="error" class="alert alert-danger" role="alert">
     <p>Status: {{ error.error.status }}!</p>
@@ -10,11 +13,17 @@
   <div *ngIf="mods.length > 0; then thenMods; else elseMods"></div>
 
   <ng-template #thenMods>
-    <ol>
-      <li *ngFor="let mod of mods">
-        <a [routerLink]="['/mods', mod._id]">{{ mod.name }}</a>
-      </li>
-    </ol>
+
+    <div *ngFor="let mod of mods" class="card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">{{ mod.name }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Author: {{ mod.author }}</h6>
+        <p class="card-text">{{ mod.description }}</p>
+        <a [routerLink]="['/mods', mod._id]" class="card-link">Show</a>
+        <a [routerLink]="['/mods', mod._id, 'edit']" class="card-link">Edit</a>
+      </div>
+    </div>
+
   </ng-template>
 
   <ng-template #elseMods>

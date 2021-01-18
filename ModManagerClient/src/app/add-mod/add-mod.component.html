@@ -1,8 +1,11 @@
 <main class="container">
 
-  <p>addModForm: {{ addModForm.value | json }}</p>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Add Mod</h1>
+    <p class="lead">This view allows to add new mod.</p>
+  </div>
 
-  <h1>Add Mod</h1>
+  <p>addModForm: {{ addModForm.value | json }}</p>
 
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Mod was successfully added!</p>

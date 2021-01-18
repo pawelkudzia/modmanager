@@ -1,8 +1,11 @@
 <main class="container">
 
-  <p>editModForm: {{ editModForm.value | json }}</p>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Edit: {{ mod?.name }}</h1>
+    <p class="lead">This view allows to edit information about the mod.</p>
+  </div>
 
-  <h1>Edit Mod</h1>
+  <p>editModForm: {{ editModForm.value | json }}</p>
 
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Mod was successfully updated!</p>

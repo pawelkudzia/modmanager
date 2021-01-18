@@ -1,8 +1,11 @@
 <main class="container">
 
-  <p>addGameForm: {{ addGameForm.value | json }}</p>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Add Game</h1>
+    <p class="lead">This view allows to add new game.</p>
+  </div>
 
-  <h1>Add Game</h1>
+  <p>addGameForm: {{ addGameForm.value | json }}</p>
 
   <div *ngIf="submitted && !error" class="alert alert-success" role="alert">
     <p>Game was successfully added!</p>

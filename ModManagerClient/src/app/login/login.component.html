@@ -1,8 +1,11 @@
 <main class="container">
 
-  <p>loginForm: {{ loginForm.value | json }}</p>
+  <div class="starter-template text-center py-5 px-3">
+    <h1>Login</h1>
+    <p class="lead">This view allows to login. You have to provide your credentials which you used for registering user account.</p>
+  </div>
 
-  <h1>Login</h1>
+  <p>loginForm: {{ loginForm.value | json }}</p>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
@@ -42,7 +45,7 @@
       class="btn btn-primary"
       [disabled]="loginForm.invalid">Login</button>
 
-    <button type="reset" class="btn btn-danger">Reset</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
 
   </form>
 

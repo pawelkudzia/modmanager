@@ -1,7 +1,7 @@
 <main class="container">
 
   <div class="starter-template text-center py-5 px-3">
-    <h1>Game: {{ game.name }}</h1>
+    <h1>Show: {{ game.name }}</h1>
     <p class="lead">This view shows information about the game.</p>
   </div>
 
@@ -13,7 +13,7 @@
   <div *ngIf="game; then thenGame; else elseGame"></div>
 
   <ng-template #thenGame>
-    <p><a [routerLink]="['/games/', game._id, 'edit']">Edit</a></p>
+
     <p>_id: {{ game._id }}</p>
     <p>name: {{ game.name }}</p>
     <p>description: {{ game.description }}</p>
@@ -22,7 +22,20 @@
     <p>engine: {{ game.engine ? game.engine : 'Unknown' }}</p>
     <p>platforms: {{ game.platforms ? game.platforms : 'Unknown' }}</p>
 
-    <a [routerLink]="['/games']" class="card-link">Back to Games</a>
+
+    <p>Navigation:</p>
+    <ul class="nav">
+      <li class="nav-item">
+        <a [routerLink]="['/games/', game._id]" class="nav-link">Show</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/games/', game._id, 'edit']" class="nav-link">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/games']" class="nav-link">Back to Games</a>
+      </li>
+    </ul>
+
   </ng-template>
 
   <ng-template #elseGame>
