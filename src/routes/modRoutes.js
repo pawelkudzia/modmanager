@@ -7,12 +7,12 @@ const router = express.Router();
 
 // endpoints
 router.route('/')
-    .get(/*authController.protect,*/ modController.getAllMods)
-    .post(/*authController.protect,*/ modController.createMod);
+    .get(authController.protect, modController.getAllMods)
+    .post(authController.protect, modController.createMod);
 
 router.route('/:id')
-    .get(/*authController.protect,*/ modController.getMod)
-    .patch(/*authController.protect,*/ modController.updateMod)
-    .delete(/*authController.protect,*/ modController.deleteMod);
+    .get(authController.protect, modController.getMod)
+    .patch(authController.protect, modController.updateMod)
+    .delete(authController.protect, modController.deleteMod);
 
 export default router;
