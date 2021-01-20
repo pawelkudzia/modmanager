@@ -76,7 +76,7 @@
           class="form-select"
           [class.is-invalid]="game.invalid && game.touched"
           formControlName="game">
-          <option *ngFor="let game of games" value="{{ game.name }}">{{ game.name }}</option>
+          <option *ngFor="let game of games" value="{{ game._id }}">{{ game.name }}</option>
         </select>
 
         <div *ngIf="game.invalid && game.touched">
