@@ -40,10 +40,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log('data was submitted!');
 
     const newUser = this.loginForm.value;
-    console.log(newUser);
 
     this._authService.loginUser(newUser).subscribe(
       response => {

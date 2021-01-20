@@ -7,6 +7,7 @@ import { EditModComponent } from './edit-mod/edit-mod.component';
 import { GameComponent } from './game/game.component';
 import { GamesComponent } from './games/games.component';
 import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ModComponent } from './mod/mod.component';
@@ -22,11 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [GuestGuard]
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [GuestGuard]
   },
   {
     path: 'games',

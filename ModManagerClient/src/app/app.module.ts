@@ -23,6 +23,7 @@ import { ModService } from './services/mod.service';
 import { GameService } from './services/game.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 
 @NgModule({
@@ -49,7 +50,7 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
     HttpClientModule,
     NgbPaginationModule
   ],
-  providers: [GameService, ModService, AuthService, AuthGuard, {
+  providers: [GameService, ModService, AuthService, AuthGuard, GuestGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

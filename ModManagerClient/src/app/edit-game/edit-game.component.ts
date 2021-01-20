@@ -93,7 +93,6 @@ export class EditGameComponent implements OnInit {
   onSubmit() {
     this.error = null;
     this.submitted = true;
-    console.log('data was submitted!');
 
     const value = this.editGameForm.value;
 

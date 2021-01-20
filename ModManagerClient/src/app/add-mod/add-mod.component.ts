@@ -61,7 +61,6 @@ export class AddModComponent implements OnInit {
   onSubmit() {
     this.error = null;
     this.submitted = true;
-    console.log('data was submitted!');
 
     const value = this.addModForm.value;
 
