@@ -129,6 +129,10 @@ export class EditGameComponent implements OnInit {
     );
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
   deleteGame() {
     this._gameService.deleteGame(this.gameId).subscribe(
       response => {

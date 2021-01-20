@@ -53,4 +53,8 @@ export class GameComponent implements OnInit {
     );
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
 }

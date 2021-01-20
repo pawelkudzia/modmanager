@@ -50,4 +50,8 @@ export class ModComponent implements OnInit {
     );
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
 }

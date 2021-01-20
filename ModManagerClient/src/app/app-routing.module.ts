@@ -6,6 +6,7 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 import { EditModComponent } from './edit-mod/edit-mod.component';
 import { GameComponent } from './game/game.component';
 import { GamesComponent } from './games/games.component';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ModComponent } from './mod/mod.component';
@@ -16,7 +17,8 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
@@ -28,35 +30,43 @@ const routes: Routes = [
   },
   {
     path: 'games',
-    component: GamesComponent
+    component: GamesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mods',
-    component: ModsComponent
+    component: ModsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'games/create',
-    component: AddGameComponent
+    component: AddGameComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'games/:id/edit',
-    component: EditGameComponent
+    component: EditGameComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'games/:id',
-    component: GameComponent
+    component: GameComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mods/create',
-    component: AddModComponent
+    component: AddModComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mods/:id/edit',
-    component: EditModComponent
+    component: EditModComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mods/:id',
-    component: ModComponent
+    component: ModComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

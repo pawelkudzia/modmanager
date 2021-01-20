@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from '../contracts/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,15 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
   loginForm: FormGroup;
 
-  constructor(private _fb: FormBuilder) { }
+  response = null;
+  error = null;
+  user: User;
+
+  constructor(
+    private _fb: FormBuilder,
+    private _authService: AuthService,
+    private _router: Router
+  ) { }
 
   get email(): AbstractControl {
     return this.loginForm.get('email');
@@ -30,7 +41,37 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     console.log('data was submitted!');
-    console.log(this.loginForm);
+
+    const newUser = this.loginForm.value;
+    console.log(newUser);
+
+    this._authService.loginUser(newUser).subscribe(
+      response => {
+        this.response = response;
+        this.user = this.response.data.user;
+
+        localStorage.setItem('token', this.response.token);
+
+        console.log('response');
+        console.log(this.response);
+        console.log('user');
+        console.log(this.user);
+        this._router.navigate(['/']);
+      },
+      error => {
+        this.error = error,
+        this.newForm();
+      }
+    );
+  }
+
+  newForm() {
+    this.submitted = false;
+    this.loginForm.reset();
+  }
+
+  closeErrorAlert() {
+    this.error = null;
   }
 
 }

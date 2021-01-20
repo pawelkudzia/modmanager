@@ -13,6 +13,7 @@
   <div *ngIf="!submitted && error" class="alert alert-danger" role="alert">
     <p>Status: {{ error.error.status }}!</p>
     <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
+    <button type="button" class="btn btn-danger" (click)="closeErrorAlert()">Close</button>
   </div>
 
   <div *ngIf="mod; then thenMod; else elseMod"></div>

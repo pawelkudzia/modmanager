@@ -27,4 +27,8 @@ export class ModsComponent implements OnInit {
     );
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
 }

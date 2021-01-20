@@ -94,4 +94,8 @@ export class AddGameComponent implements OnInit {
     this.addGameForm.reset({ genre: this.genres[0] });
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
 }

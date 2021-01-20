@@ -119,6 +119,10 @@ export class EditModComponent implements OnInit {
     );
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
   deleteMod() {
     this._modService.deleteMod(this.modId).subscribe(
       response => {

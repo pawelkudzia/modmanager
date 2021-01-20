@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,9 @@ import { EditModComponent } from './edit-mod/edit-mod.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModService } from './services/mod.service';
 import { GameService } from './services/game.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,11 @@ import { GameService } from './services/game.service';
     HttpClientModule,
     NgbPaginationModule
   ],
-  providers: [GameService, ModService],
+  providers: [GameService, ModService, AuthService, AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -87,4 +87,8 @@ export class AddModComponent implements OnInit {
     this.addModForm.reset({ game: this.games[0]?._id });
   }
 
+  closeErrorAlert() {
+    this.error = null;
+  }
+
 }

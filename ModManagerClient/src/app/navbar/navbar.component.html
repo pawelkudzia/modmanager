@@ -12,25 +12,28 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li *ngIf="!authService.loggedIn()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Register</a>
+        </li>
+        <li *ngIf="!authService.loggedIn()" class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" class="nav-item">
+          <a class="nav-link" (click)="logoutUser()" style="cursor: pointer;">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Register</a>
+          <a class="nav-link" [routerLink]="['/games']">Games</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+          <a class="nav-link" [routerLink]="['/games/create']">Add Game</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/games']" routerLinkActive="active">Games</a>
+          <a class="nav-link" [routerLink]="['/mods']">Mods</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/games/create']" routerLinkActive="active">Add Game</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/mods']" routerLinkActive="active">Mods</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/mods/create']" routerLinkActive="active">Add Mod</a>
+          <a class="nav-link" [routerLink]="['/mods/create']">Add Mod</a>
         </li>
       </ul>
 
