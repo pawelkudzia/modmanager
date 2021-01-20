@@ -10,6 +10,7 @@ import { User } from '../contracts/user';
 export class AuthService {
   _registerUrl: string = 'http://localhost:8080/api/v1/users/register';
   _loginUrl: string = 'http://localhost:8080/api/v1/users/login';
+  _usersUrl: string = 'http://localhost:8080/api/v1/users';
 
   constructor(
     private _http: HttpClient,
@@ -35,6 +36,10 @@ export class AuthService {
   logoutUser() {
     localStorage.removeItem('token');
     this._router.navigate(['/login']);
+  }
+
+  getLoggedInUser() {
+    return localStorage.getItem('user');
   }
 
 }

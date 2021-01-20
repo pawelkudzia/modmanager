@@ -37,6 +37,10 @@
         </li>
       </ul>
 
+      <div *ngIf="authService.loggedIn()" class="d-flex">
+        <span class="navbar-text">Logged as: {{ authService.getLoggedInUser() }}</span>
+      </div>
+
     </div>
 
   </div>

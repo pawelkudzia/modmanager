@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../contracts/user';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -9,6 +10,10 @@ import { AuthService } from '../services/auth.service';
 export class NavbarComponent implements OnInit {
   title = 'ModManagerClient';
   loggedIn: boolean;
+
+  response = null;
+  error = null;
+  user: User;
 
   constructor(public authService: AuthService) { }
 
