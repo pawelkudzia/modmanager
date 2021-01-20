@@ -74,7 +74,21 @@ ModManager can be used as simple games and mods web application aggregator which
 
 ## Features
 
-There will be information about features.
+The main features are:
+* Register and Login User,
+* Protected views (routes) which can be only accessed by logged in Users,
+* Page Not Found view,
+* Read Games list,
+* Read Mods list,
+* Create new Game,
+* Update existing Game,
+* Delete existing Game with all associated Mods,
+* Create new Mod if there is at least 1 game available,
+* Update existing Mod,
+* Delete existing Mod,
+* Forms validation and so on...
+
+The project is playground for learning Express and Angular framework fundamentals.
 
 ## Documentation
 
