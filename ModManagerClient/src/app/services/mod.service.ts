@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Mod } from '../contracts/mod';
@@ -29,5 +29,14 @@ export class ModService {
 
   deleteMod(id: string): Observable<Mod> {
     return this._http.delete<Mod>(`${this._url}/${id}`);
+  }
+
+  getModsForGame(id: string): Observable<Mod[]> {
+    id = id.trim();
+
+    // Add safe, URL encoded search parameter if there is a search term
+    const options = id ? { params: new HttpParams().set('game', id) } : {};
+
+    return this._http.get<Mod[]>(`${this._url}`, options);
   }
 }

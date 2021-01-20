@@ -73,4 +73,26 @@
     <p>There is not information about this game.</p>
   </ng-template>
 
+  <h2>Mods</h2>
+  <p>Number of mods: <span class="badge bg-secondary">{{ mods.length }}</span>.</p>
+
+  <div *ngIf="mods.length > 0; then thenMods; else elseMods"></div>
+
+  <ng-template #thenMods>
+    <ol>
+      <li *ngFor="let mod of mods | slice: (page - 1) * pageSize : page * pageSize">
+        <a [routerLink]="['/mods', mod._id]">{{ mod.name }}</a>
+      </li>
+    </ol>
+
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="mods.length"></ngb-pagination>
+  </ng-template>
+
+  <ng-template #elseMods>
+    <p>There are not any mods for this game.</p>
+  </ng-template>
+
 </main>
