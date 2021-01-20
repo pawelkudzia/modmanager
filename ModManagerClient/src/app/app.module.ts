@@ -19,6 +19,8 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 import { AddModComponent } from './add-mod/add-mod.component';
 import { EditModComponent } from './edit-mod/edit-mod.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModService } from './services/mod.service';
+import { GameService } from './services/game.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbPaginationModule
   ],
-  providers: [],
+  providers: [GameService, ModService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
