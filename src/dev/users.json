@@ -3,21 +3,21 @@
         "role": "admin",
         "name": "admin",
         "email": "admin@example.com",
-        "password": "123456789",
-        "passwordConfirm": "123456789"
+        "password": "12345678",
+        "passwordConfirm": "12345678"
     },
     {
         "role": "user",
         "name": "user",
         "email": "user@example.com",
-        "password": "123456789",
-        "passwordConfirm": "123456789"
+        "password": "12345678",
+        "passwordConfirm": "12345678"
     },
     {
         "role": "user",
         "name": "tester",
         "email": "tester@example.com",
-        "password": "123456789",
-        "passwordConfirm": "123456789"
+        "password": "12345678",
+        "passwordConfirm": "12345678"
     }
 ]
