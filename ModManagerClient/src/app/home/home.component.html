@@ -1,21 +1,52 @@
 <main class="container">
 
-  <div class="starter-template text-center py-5 px-3">
+  <div class="text-center py-5 px-3">
     <h1>Home</h1>
     <p class="lead">This view allows to quick access to specific part of application. Also you can find here links to documentation.</p>
   </div>
 
-  <h2>Links</h2>
-  <ul>
-    <li>
-      <a [routerLink]="['/games']">Games</a>
-    </li>
-    <li>
-      <a [routerLink]="['/mods']">Mods</a>
-    </li>
-    <li>
-      <a href="https://github.com/pawelkudzia/modmanager" target="_blank">Check ModManager on GitHub</a>
-    </li>
-  </ul>
+  <div class="row mb-5">
+
+    <div class="col-md-4">
+      <h2>Lists</h2>
+      <ul>
+        <li>
+          <a [routerLink]="['/games']">Games</a>
+        </li>
+        <li>
+          <a [routerLink]="['/mods']">Mods</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h2>Quick Actions</h2>
+      <ul>
+        <li>
+          <a [routerLink]="['/games/create']">Add new Game</a>
+        </li>
+        <li>
+          <a [routerLink]="['/mods/create']">Add new Mod</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h2>Misc</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/pawelkudzia/modmanager" target="_blank">ModManager on GitHub</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>General Stats</h2>
+      <p>Here you can find out some stats.</p>
+    </div>
+  </div>
 
 </main>
