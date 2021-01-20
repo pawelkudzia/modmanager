@@ -43,10 +43,48 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+
+    <div class="col-md-8">
       <h2>General Stats</h2>
       <p>Here you can find out some stats.</p>
+
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+        <p>Status: {{ error.error.status }}!</p>
+        <p>Something went wrong. Please try again or visit <a [routerLink]="['/']">home</a> view.</p>
+        <button type="button" class="btn btn-danger" (click)="closeErrorAlert()">Close</button>
+      </div>
+
+      <div *ngIf="(gamesCount > 0 || modsCount > 0) then thenGamesAndMods; else elseGamesAndMods"></div>
+
+      <ng-template #thenGamesAndMods>
+        <div class="chart">
+          <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </ng-template>
+
+      <ng-template #elseGamesAndMods>
+        <p>Currently, there are not any games or mods.</p>
+      </ng-template>
+
     </div>
+
+    <div class="col-md-4">
+      <h2>Summary</h2>
+      <p>There are:</p>
+      <ul>
+        <li>{{ gamesCount }} games</li>
+        <li>{{ modsCount }} mods</li>
+      </ul>
+    </div>
+
   </div>
 
 </main>

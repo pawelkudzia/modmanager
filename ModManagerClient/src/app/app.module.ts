@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { TokenInterceptorService } from './interceptors/token-interceptor.servic
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    ChartsModule
   ],
   providers: [GameService, ModService, AuthService, AuthGuard, GuestGuard, {
     provide: HTTP_INTERCEPTORS,
