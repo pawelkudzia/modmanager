@@ -50,7 +50,9 @@
         </tr>
         <tr>
           <td><span class="badge bg-secondary">Game</span></td>
-          <td>{{ mod.game }}</td>
+          <td>
+            <a [routerLink]="['/games', game?._id]">{{ game?.name }}</a>
+          </td>
         </tr>
         <tr>
           <td><span class="badge bg-secondary">Author</span></td>
