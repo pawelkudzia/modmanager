@@ -105,7 +105,7 @@ app.use((err, req, res, next) => {
 
 This should have be the last one middleware and as the first argument it takes `err` object which data is used in response.
 
-### Sixth
+### Sixth section: server
 
 ```js
 // server
