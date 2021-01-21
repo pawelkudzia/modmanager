@@ -16,7 +16,7 @@
     <button type="button" class="btn btn-danger" (click)="closeErrorAlert()">Close</button>
   </div>
 
-  <p>addGameForm: {{ addGameForm.value | json }}</p>
+  <!-- <p>addGameForm: {{ addGameForm.value | json }}</p> -->
 
   <form *ngIf="!submitted" [formGroup]="addGameForm" (ngSubmit)="onSubmit()">
 

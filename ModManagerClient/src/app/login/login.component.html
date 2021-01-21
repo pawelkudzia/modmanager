@@ -5,7 +5,7 @@
     <p class="lead">This view allows to login. You have to provide your credentials which you used for registering user account.</p>
   </div>
 
-  <p>loginForm: {{ loginForm.value | json }}</p>
+  <!-- <p>loginForm: {{ loginForm.value | json }}</p> -->
 
   <div *ngIf="!submitted && error" class="alert alert-danger" role="alert">
     <p>Status: {{ error.error.status }}!</p>

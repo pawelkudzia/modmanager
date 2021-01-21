@@ -20,7 +20,7 @@
 
   <ng-template #thenModForm>
 
-    <p>addModForm: {{ addModForm.value | json }}</p>
+    <!-- <p>addModForm: {{ addModForm.value | json }}</p> -->
 
     <form *ngIf="!submitted" [formGroup]="addModForm" (ngSubmit)="onSubmit()">
 
