@@ -16,18 +16,6 @@ Response:
 }
 ```
 
-```POST /api/v1/users/register```
-
-Body:
-```json
-{
-    "name": "tester",
-    "email": "tester@example.com",
-    "password": "12345678",
-    "passwordConfirm": "12345678"
-}
-```
-
 ```POST /api/v1/users/login```
 
 Response:
