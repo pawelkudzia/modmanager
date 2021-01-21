@@ -1,4 +1,5 @@
 # modmanager
+
 ModManager is simple REST Web API and SPA which allow users to manage their games and mods library.
 
 For backend [Express](https://expressjs.com/) is used, while [Angular](https://angular.io/) is used for frontend.
