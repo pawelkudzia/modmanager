@@ -1,5 +1,5 @@
 # modmanager
-ModManager is simple REST Web API and SPA application which allow users to manage their games and mods library.
+ModManager is simple REST Web API and SPA which allow users to manage their games and mods library.
 
 For backend [Express](https://expressjs.com/) is used, while [Angular](https://angular.io/) is used for frontend.
 
@@ -23,7 +23,7 @@ To check that you have Angular CLI installed you can use command:
 
 Make sure you follow official instructions for installing mentioned tools.
 
-After that you can clone or download [ModManager](https://github.com/pawelkudzia/modmanager) repository (master branch), then go to root directory:
+After that you can clone or download ModManager repository (master branch), then go to root directory:
 
 ```cd modmanager```
 
@@ -39,7 +39,9 @@ and also run command:
 
 ```npm install```
 
-Next step is creating config.env file where you can store environment variables. To run backend application you have to prepare database connection string, port and also Json Web Token's stuff. You can use something like this:
+Next step is creating `config.env` file where you can store environment variables. Put `config.env` file inside `modmanager` directory (this directory level where `src` directory or `package.json` file is located).
+
+To run backend application you have to prepare database connection string, port and also JSON Web Token's stuff. Example vlaid `config.env` file can look like this:
 
 ```
 NODE_ENV=development
@@ -49,6 +51,8 @@ JWT_SECRET=<YOUR SECRET KEY>
 JWT_EXPIRES_IN=1d
 JWT_COOKIE_EXPIRES_IN=1
 ```
+
+Keep in mind that `JWT_SECRET` should contain preferably long and random string.
 
 If there are not any errors you can run backend and frontend applications. To run backend application (Express) go to root directory:
 
@@ -66,7 +70,7 @@ and run command:
 
 ```ng serve --open```
 
-As you can see they are standard Node.js and Angular commands. For more detailed information you can visit official websites of these tools.
+As you can see all of these commands are standard Node.js and Angular commands. For more detailed information you can visit official websites of these tools.
 
 ## Usage
 
@@ -76,6 +80,7 @@ ModManager can be used as simple games and mods web application aggregator which
 
 The main features are:
 * Register and Login User,
+* Two types of user accounts (roles): Admin and User,
 * Protected views (routes) which can be only accessed by logged in Users,
 * Page Not Found view,
 * Read Games list,
@@ -88,15 +93,21 @@ The main features are:
 * Delete existing Mod,
 * Forms validation and so on...
 
-The project is playground for learning Express and Angular framework fundamentals.
+The project is playground for learning Express and Angular framework fundamentals. The project was also created because of the course at the university.
 
 ## Documentation
 
-There will be information about documentation.
+You can get started with ModManager and find out more by using these links:
+* [Getting Started]()
+* [Backend Architecture]()
+* [Frontend Architecture]()
+* [API]()
+* [Components]()
+* [Showcase and Examples]()
 
 ## Credits
 
-[ModManager](https://github.com/pawelkudzia/modmanager) (this application) by Paweł Kudzia.
+[ModManager](https://github.com/pawelkudzia/modmanager) (this repository) by Paweł Kudzia.
 
 [Express](https://expressjs.com/) by all its contributors.
 
