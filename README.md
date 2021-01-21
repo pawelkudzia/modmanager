@@ -1,6 +1,6 @@
 # modmanager
 
-ModManager is simple REST Web API and SPA which allow users to manage their games and mods library.
+ModManager is REST Web API and SPA which allow users to manage their games and mods library.
 
 For backend [Express](https://expressjs.com/) is used, while [Angular](https://angular.io/) is used for frontend.
 
@@ -94,7 +94,7 @@ The main features are:
 * Delete existing Mod,
 * Forms validation and so on...
 
-The project is playground for learning Express and Angular framework fundamentals. The project was also created because of the course at the university.
+The project is playground for learning Express and Angular framework fundamentals. The project was also created because of the course at the university. This is not perfect and ready-to-use application, it needs code refactoring and many improvements but by making ModManager I learnt fundamentals of mentioned frameworks.
 
 ## Documentation
 
