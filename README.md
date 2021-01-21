@@ -41,7 +41,7 @@ and also run command:
 
 Next step is creating `config.env` file where you can store environment variables. Put `config.env` file inside `modmanager` directory (this directory level where `src` directory or `package.json` file is located).
 
-To run backend application you have to prepare database connection string, port and also JSON Web Token's stuff. Example vlaid `config.env` file can look like this:
+To run backend application you have to prepare database connection string, port and also [JSON Web Token](https://jwt.io/)'s stuff. Example `config.env` file can look like this:
 
 ```
 NODE_ENV=development
