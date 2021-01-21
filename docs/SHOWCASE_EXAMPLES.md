@@ -6,6 +6,8 @@ ModManagerClient is an [Angular](https://angular.io/) SPA which consumes REST We
 
 This view contains `register form` which allows to create new user accounts.
 
+![alt text](https://github.com/pawelkudzia/modmanager/blob/feature/docs/images/01_register.png "Register")
+
 ## Login
 
 This view contains `login form` which allows to login in to application. Logged in user can access protected views.
