@@ -102,7 +102,7 @@ You can get started with ModManager and find out more by using these links:
 * [Getting Started](https://github.com/pawelkudzia/modmanager/blob/feature/docs/GETTING_STARTED.md)
 * [Backend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/BACKEND_ARCHITECTURE.md)
 * [Frontend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/FRONTEND_ARCHITECTURE.md)
-* [API]()
+* [API](https://github.com/pawelkudzia/modmanager/blob/feature/docs/API.md)
 * [Showcase and Examples]()
 
 ## Credits

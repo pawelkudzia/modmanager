@@ -1,6 +1,6 @@
 # Backend Architecture
 
-ModManager uses [Express](https://expressjs.com/) for creating REST Web API which can be consumed by any HTTP client. In this document you can find out information about overall project structure. For API details you should visit [API]() document.
+ModManager uses [Express](https://expressjs.com/) for creating REST Web API which can be consumed by any HTTP client. In this document you can find out information about overall project structure. For API details you should visit [API](https://github.com/pawelkudzia/modmanager/blob/feature/docs/API.md) document.
 
 ## Project Structure
 
