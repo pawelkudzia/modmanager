@@ -101,9 +101,8 @@ The project is playground for learning Express and Angular framework fundamental
 You can get started with ModManager and find out more by using these links:
 * [Getting Started](https://github.com/pawelkudzia/modmanager/blob/feature/docs/GETTING_STARTED.md)
 * [Backend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/BACKEND_ARCHITECTURE.md)
-* [Frontend Architecture]()
+* [Frontend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/FRONTEND_ARCHITECTURE.md)
 * [API]()
-* [Components]()
 * [Showcase and Examples]()
 
 ## Credits
