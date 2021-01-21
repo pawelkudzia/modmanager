@@ -65,7 +65,7 @@ The sample Mod data is not provided because each Mod resource depends on Game re
 ## What You Should Know
 
 Apart of basic knowledge about all mentioned stuff (Node.js, Express, Angular, general programming skills etc.) you should also be familiar with:
-* [mongoose](https://mongoosejs.com/) is Object Data Modeling tool for interacting with MongoDB database same way as you can use ORM tools with relational databases
-* [Bootstrap](https://getbootstrap.com/) is CSS framework for building responsive websites and interfaces
+* [mongoose](https://mongoosejs.com/) – is Object Data Modeling tool for interacting with MongoDB database same way as you can use ORM tools with relational databases
+* [Bootstrap](https://getbootstrap.com/) – is CSS framework for building responsive websites and interfaces
 
 If you know about all of these then you can easily jump into next section of this documentation.
