@@ -1,23 +1,10 @@
 [
     {
-        "name": "Test Game",
-        "description": "This is description for example game.",
-        "genre": "Misc",
-        "developer": "Test Developer",
-        "engine": "Test Engine",
-        "platforms": ["Windows", "Linux", "macOS"]
-    },
-    {
-        "name": "Game without Developer and Engine",
-        "description": "This is description for example game.",
+        "name": "Amazing Game",
+        "description": "This is description for amazing game.",
         "genre": "Action",
-        "platforms": ["Windows"]
-    },
-    {
-        "name": "Game without Platforms",
-        "description": "This is description for example game.",
-        "genre": "Role-playing",
-        "developer": "Test Developer",
-        "engine": "Test Engine"
+        "developer": "Amazing Dev",
+        "engine": "Amazing Engine",
+        "platforms": ["Windows", "Linux", "macOS"]
     }
 ]
