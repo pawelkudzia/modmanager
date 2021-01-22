@@ -51,15 +51,15 @@ export class HomeComponent implements OnInit {
         this.response = response;
         this.gamesCount = this.response.results;
         this.pieChartData[0] = this.gamesCount;
-      },
-      error => this.error = error
-    );
 
-    this._modService.getMods().subscribe(
-      response => {
-        this.response = response;
-        this.modsCount = this.response.results;
-        this.pieChartData[1] = this.modsCount;
+        this._modService.getMods().subscribe(
+          response => {
+            this.response = response;
+            this.modsCount = this.response.results;
+            this.pieChartData[1] = this.modsCount;
+          },
+          error => this.error = error
+        );
       },
       error => this.error = error
     );
