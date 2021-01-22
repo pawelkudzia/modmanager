@@ -18,6 +18,8 @@ Response:
 }
 ```
 
+---
+
 ```GET /api/v1/users```
 
 Response (no JWT):
@@ -56,12 +58,40 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```POST /api/v1/users/register```
+
+Body:
+```json
+{
+    "name": "dev",
+    "email": "dev@example.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678"
+}
+```
 
 Response:
 ```json
-
+{
+    "status": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMGIwNGIxYmVjOGM5MWFhODZlMjEwMSIsImlhdCI6MTYxMTMzNDgzNCwiZXhwIjoxNjExNDIxMjM0fQ.v43SrjeYTGpJWu14R_srf69tEvDmAU_IuDhYMiKxa84",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "600b04b1bec8c91aa86e2101",
+            "name": "dev",
+            "email": "dev@example.com",
+            "createdAt": "2021-01-22T17:00:33.430Z",
+            "updatedAt": "2021-01-22T17:00:33.430Z",
+            "__v": 0
+        }
+    }
+}
 ```
+
+---
 
 ```GET /api/v1/users/:id```
 
@@ -91,6 +121,8 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```POST /api/v1/users/login```
 
 Body:
@@ -119,6 +151,8 @@ Response:
     }
 }
 ```
+
+---
 
 ```GET /api/v1/games```
 
@@ -196,6 +230,8 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```POST /api/v1/games```
 
 Body:
@@ -232,6 +268,8 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```GET /api/v1/games/:id```
 
 Response (no JWT):
@@ -264,6 +302,8 @@ Response (Authorization: Bearer JWT):
     }
 }
 ```
+
+---
 
 ```PATCH /api/v1/games/:id```
 
@@ -305,6 +345,8 @@ Response (Authorization: Bearer JWT):
     }
 }
 ```
+
+---
 
 ```DELETE /api/v1/games/:id```
 
@@ -359,6 +401,8 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```POST /api/v1/mods```
 
 Body:
@@ -397,6 +441,8 @@ Response (Authorization: Bearer JWT):
 }
 ```
 
+---
+
 ```GET /api/v1/mods/:id```
 
 Response (no JWT):
@@ -425,6 +471,8 @@ Response (Authorization: Bearer JWT):
     }
 }
 ```
+
+---
 
 ```PATCH /api/v1/mods/:id```
 
@@ -464,6 +512,8 @@ Response (Authorization: Bearer JWT):
     }
 }
 ```
+
+---
 
 ```DELETE /api/v1/mods/:id```
 
