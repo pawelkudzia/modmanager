@@ -94,7 +94,7 @@ The main features are:
 * Delete existing Mod,
 * Forms validation and so on...
 
-The project is playground for learning Express and Angular framework fundamentals. The project was also created because of the course at the university. This is not perfect and ready-to-use application, it needs code refactoring and many improvements but by making ModManager I learnt fundamentals of mentioned frameworks.
+The project is playground for learning Express and Angular framework fundamentals. The project was also created because of the course at the university. This is not perfect and ready-to-use application, it needs code refactoring and many improvements but by developing ModManager I learnt fundamentals of mentioned frameworks.
 
 ## Documentation
 
