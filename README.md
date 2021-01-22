@@ -103,7 +103,7 @@ You can get started with ModManager and find out more by using these links:
 * [Backend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/BACKEND_ARCHITECTURE.md)
 * [Frontend Architecture](https://github.com/pawelkudzia/modmanager/blob/feature/docs/FRONTEND_ARCHITECTURE.md)
 * [API](https://github.com/pawelkudzia/modmanager/blob/feature/docs/API.md)
-* [Showcase and Examples](https://github.com/pawelkudzia/modmanager/blob/feature/docs/SHOWCASE_EXAMPLES.md)
+* [Showcase](https://github.com/pawelkudzia/modmanager/blob/feature/docs/SHOWCASE.md)
 
 ## Credits
 

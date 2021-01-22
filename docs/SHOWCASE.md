@@ -1,4 +1,4 @@
-# Showcase and Examples
+# Showcase
 
 ModManagerClient is an [Angular](https://angular.io/) SPA which consumes REST Web API. In this document you can see how the application looks like.
 
