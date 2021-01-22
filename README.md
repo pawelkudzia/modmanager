@@ -116,3 +116,7 @@ You can get started with ModManager and find out more by using these links:
 ## License
 
 The ModManager is open-sourced software licensed under the [MIT](https://github.com/pawelkudzia/modmanager/blob/master/LICENSE) license.
+
+## Community
+
+Do you like ModManger? You could give this repo a start :star: :arrow_up:.
