@@ -50,7 +50,6 @@ PORT=8080
 DATABASE_LOCAL=mongodb://localhost:27017/modmanager
 JWT_SECRET=<YOUR SECRET KEY>
 JWT_EXPIRES_IN=1d
-JWT_COOKIE_EXPIRES_IN=1
 ```
 
 Keep in mind that `JWT_SECRET` should contain preferably long and random string.
