@@ -10,6 +10,7 @@ const modSchema = new mongoose.Schema({
         required: [true, 'Name is required.'],
         unique: true,
         minlength: 3,
+        maxlength: 100
     },
     description: {
         type: String,

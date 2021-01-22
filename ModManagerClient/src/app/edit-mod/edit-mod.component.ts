@@ -47,7 +47,7 @@ export class EditModComponent implements OnInit {
 
   ngOnInit(): void {
     this.editModForm = this._fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
       game: [this.games[0], Validators.required],
       author: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]

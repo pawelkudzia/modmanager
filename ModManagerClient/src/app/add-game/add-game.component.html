@@ -34,6 +34,7 @@
       <div *ngIf="name.invalid && name.touched">
         <small *ngIf="name.errors.required" class="text-danger">Name is required.</small>
         <small *ngIf="name.errors.minlength" class="text-danger">Name must have at least 3 chars.</small>
+        <small *ngIf="name.errors.maxlength" class="text-danger">Name must have maximum 100 chars.</small>
       </div>
 
     </div>

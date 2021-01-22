@@ -42,7 +42,7 @@ export class AddModComponent implements OnInit {
 
   ngOnInit(): void {
     this.addModForm = this._fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
       game: [this.games[0]?._id, Validators.required],
       author: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]

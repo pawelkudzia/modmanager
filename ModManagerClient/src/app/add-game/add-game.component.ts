@@ -54,7 +54,7 @@ export class AddGameComponent implements OnInit {
 
   ngOnInit(): void {
     this.addGameForm = this._fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
       genre: [this.genres[0], Validators.required],
       developer: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
