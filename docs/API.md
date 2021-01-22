@@ -6,6 +6,8 @@ ModManager uses [Express](https://expressjs.com/) for creating REST Web API whic
 
 For testing API you can use any HTTP client, e.g. [Postman](https://www.postman.com/). All data is sent and received as JSON. Authentication is made by using [JSON Web Token](https://jwt.io/). Remember to send JSON Web Token within request if you want to get access to protected routes.
 
+---
+
 ```GET /api/v1/test```
 
 Response:
@@ -26,7 +28,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -71,7 +73,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -128,7 +130,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -212,7 +214,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -240,7 +242,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -281,7 +283,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -314,7 +316,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 204 No Content
 
 ```GET /api/v1/mods```
@@ -327,7 +329,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -376,7 +378,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -405,7 +407,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -444,7 +446,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 ```json
 {
     "status": "success",
@@ -473,7 +475,7 @@ Response (no JWT):
 }
 ```
 
-Response (Authorization: Bearer <JWT>):
+Response (Authorization: Bearer JWT):
 204 No Content
 
 ## Endpoints
