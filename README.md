@@ -75,7 +75,7 @@ As you can see all of these commands are standard Node.js and Angular commands. 
 
 ## Usage
 
-ModManager can be used as simple games and mods web application aggregator which allows users to store and manage information about their favourites games and mods. Users can create new accounts, add basic information about games and mods for these games.
+ModManager can be used as simple games and mods web application aggregator which allows users to store and manage information about their favourites games and mods. Users can create new accounts, add basic information about games and mods for these games. Data is stored in NoSQL document database (in this case MongoDB).
 
 ## Features
 
